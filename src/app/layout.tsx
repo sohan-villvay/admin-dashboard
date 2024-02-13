@@ -4,6 +4,7 @@ import "./globals.css";
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
 import Sidebar from "./components/sidebar/Sidebar";
+import Header from "./components/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Theme>
-          <div className="flex h-screen w-full bg-gray-100">
+          <div className="flex min-h-screen max-h-screen w-screen bg-white ">
             <Sidebar/>
-            <div className="flex flex-col bg-white w-full h-full ml-64 p-4 rounded-lg">
+            <Header/>
+            <div className="flex flex-col bg-white w-full min-h-full ml-60 mt-20 p-10 shadow-lg">
               {children}
             </div>
           </div>
