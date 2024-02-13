@@ -23,7 +23,7 @@ export default function RootLayout({
         <Theme>
           <div className="flex h-screen w-full bg-gray-100">
             <Sidebar/>
-            <div className="flex flex-col bg-white w-full h-full ml-64 p-4">
+            <div className="flex flex-col bg-white w-full h-full ml-64 p-4 rounded-lg">
               {children}
             </div>
           </div>

@@ -30,7 +30,7 @@ const Sidebar = () => {
 
     <div className="fixed top-0 left-0 z-10 w-60 h-screen p-4 bg-white">
       <div className="flex flex-col space-y-14">
-        <img className="h-7" src="/wuerth-logo-1.svg" alt="Logo"/>
+        <img className="h-10 pt-3" src="/wuerth-logo-1.svg" alt="Logo"/>
 
         <div className='flex flex-col space-y-1'>
         {items.map((item) => (
