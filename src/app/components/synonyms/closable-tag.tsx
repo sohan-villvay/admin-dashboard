@@ -15,7 +15,7 @@ const ClosableTag: React.FC<Props> = ({ items }) => {
     <div className="flex flex-wrap">
       {items.map((item, index) => (
         <div key={index} className="m-2">
-          <span className="inline-flex items-center px-3 py-1 bg-slate-50 rounded-full text-slate-500 font-medium mr-1 shadow-md">
+          <span className="inline-flex items-center px-3 py-1 bg-slate-50 rounded-full text-slate-500 font-medium mr-1 border">
             {item}
             <button
               type="button"
