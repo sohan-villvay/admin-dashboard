@@ -25,7 +25,7 @@ export default function RootLayout({
           <div className="flex min-h-screen max-h-screen w-screen bg-white ">
             <Sidebar/>
             <Header/>
-            <div className="flex flex-col bg-white w-full min-h-full ml-60 mt-20 p-10 shadow-lg">
+            <div className="flex flex-col bg-white w-full min-h-full ml-64 m-4 mt-20 rounded-xl p-10 shadow-[rgba(0.1,0,0,0.1)_0px_0px_7px_0.3px]">
               {children}
             </div>
           </div>
