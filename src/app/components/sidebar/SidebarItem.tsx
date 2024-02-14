@@ -16,7 +16,7 @@ const SidebarItem = ({item}:{item: ISidebarItem}) => {
     <Link href={path}>
     <div className='flex items-center space-x-2 p-3 hover:bg-slate-100 rounded-lg cursor-pointer'>
       <Icon/>
-      <p>{name}</p>
+      <p className="text-sm font-normal">{name}</p>
     </div>
     </Link>
   )
