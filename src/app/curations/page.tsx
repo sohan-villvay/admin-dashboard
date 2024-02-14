@@ -1,6 +1,8 @@
 
 export default function Curations() {
     return (
-        <div>Curations</div>
+        <div>
+            <h2 className="text-xl font-medium ">Curations</h2>
+        </div>
     );
   }
