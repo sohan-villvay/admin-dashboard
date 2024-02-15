@@ -11,22 +11,22 @@ export type Synonyms = {
 }
 
 export const columns: ColumnDef<Synonyms>[] = [
-  // {
-  //   accessorKey: "id",
-  //   header: "ID",
-  // },
+  {
+    accessorKey: "id",
+    header: "ID",
+  },
   {
     accessorKey: "synonyms",
     header: "Synonyms",
     cell: ({ row }) => {
-      const items:string[] = row.getValue("synonyms")
+      const items: string[] = row.getValue("synonyms")
 
       return <div className="flex">
-        <ClosableTag items={items}/>
-        
-        <AddNewTag/>
+        <ClosableTag items={items} />
 
-        </div>
+        <AddNewTag />
+
+      </div>
     },
   }
 
