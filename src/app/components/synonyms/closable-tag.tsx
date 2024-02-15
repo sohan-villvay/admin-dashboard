@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Cross2Icon
 } from "@radix-ui/react-icons"
+import { Button } from '@/components/ui/button';
 
 interface Props {
   items: string[];
@@ -18,17 +19,11 @@ const ClosableTag: React.FC<Props> = ({ items }) => {
     <div className="flex flex-wrap">
       {items.map((item, index) => (
         <div key={index} className="m-2">
-          <span className="inline-flex items-center px-3 py-1 bg-white-50 rounded-full text-slate-500 font-medium mr-1 border">
+          <span className="inline-flex items-center px-2 py-1 bg-slate-50 rounded-full text-slate-500 font-medium border">
             {item}
-            <button
-              type="button"
-              className="ml-2 focus:outline-none"
-              onClick={() => handleRemoveItem(item)}
-            >
-            
-            <Cross2Icon className="w-3 h-3 text-slate-500" />
-
-            </button>
+            <Button variant="ghost" size="icon" className="rounded-full h-5 w-5 ml-1 hover:bg-red-100">
+                <Cross2Icon className="h-3 w-3 hover:text-red-800" />
+            </Button>
           </span>
         </div>
       ))}

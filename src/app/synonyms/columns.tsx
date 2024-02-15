@@ -2,6 +2,8 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 import ClosableTag from "../components/synonyms/closable-tag"
+import { Button } from "@radix-ui/themes"
+import AddNewTag from "../components/synonyms/add-new-tag"
 
 export type Synonyms = {
   id: string
@@ -9,18 +11,21 @@ export type Synonyms = {
 }
 
 export const columns: ColumnDef<Synonyms>[] = [
-  {
-    accessorKey: "id",
-    header: "ID",
-  },
+  // {
+  //   accessorKey: "id",
+  //   header: "ID",
+  // },
   {
     accessorKey: "synonyms",
     header: "Synonyms",
     cell: ({ row }) => {
       const items:string[] = row.getValue("synonyms")
 
-      return <div className="">
+      return <div className="flex">
         <ClosableTag items={items}/>
+        
+        <AddNewTag/>
+
         </div>
     },
   }
