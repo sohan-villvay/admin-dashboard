@@ -73,19 +73,19 @@ export function DataTable<TData, TValue>({
 
                     <Input
                         placeholder="Search Synonyms"
-                        value={(table.getColumn("id")?.getFilterValue() as string) ?? ""}
+                        value={(table.getColumn("synonyms")?.getFilterValue() as string) ?? ""}
                         onChange={(event) =>
-                            table.getColumn("id")?.setFilterValue(event.target.value)
+                            table.getColumn("synonyms")?.setFilterValue(event.target.value)
                         }
                         className="max-w-sm"
                     />
                 </div>
                 <div className='right-0'>
-                    <Button onClick={makePostRequest} >+ Add New</Button>
+                    <Button onClick={makePostRequest} >+ New Set</Button>
                 </div>
 
             </div>
-            <div className="rounded-md border">
+            <div className="rounded-md ">
                 <Table>
                     <TableHeader>
                         {table.getHeaderGroups().map((headerGroup) => (

@@ -11,10 +11,10 @@ export type Synonyms = {
 }
 
 export const columns: ColumnDef<Synonyms>[] = [
-  {
-    accessorKey: "id",
-    header: "ID",
-  },
+  // {
+  //   accessorKey: "id",
+  //   header: "ID",
+  // },
   {
     accessorKey: "synonyms",
     header: "Synonyms",

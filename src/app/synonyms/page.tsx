@@ -3,6 +3,7 @@ import { DataTable } from "../components/synonyms/data-table"
 import { revalidatePath } from 'next/cache';
 import { getData, postData } from "@/lib/actions";
 import { toast } from "sonner"
+import { Separator } from "@/components/ui/separator";
 
 
 export async function makePostRequest() {
@@ -29,17 +30,23 @@ export async function makePostRequest() {
     }
 }
 
-
+// Make a reusable component for the Cards
 export default async function Synonyms() {
     const data = await getData()
     return (
-        <div>
-            <h2 className="text-xl font-medium ">Synonyms</h2>
-            <div>
-                <div className="container mx-auto py-10">
-                    <DataTable columns={columns} data={data} />
-                </div>
+        <div className="flex flex-row  gap-4">
+
+            <div className="container basis-3/5 mx-auto py-5 bg-white rounded-3xl p-4 shadow-lg">
+                <h2 className="text-l font-medium text-center">Synonyms</h2>
+                <Separator className="my-4" />
+                <DataTable columns={columns} data={data} />
             </div>
+
+            <div className="container basis-2/5 mx-auto py-5 bg-white rounded-3xl shadow-lg">
+                <h2 className="text-l font-medium text-center">Unit of Measures</h2>
+                <Separator className="my-4" />
+            </div>
+
         </div>
     );
 }

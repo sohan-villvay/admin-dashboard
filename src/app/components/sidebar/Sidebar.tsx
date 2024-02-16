@@ -1,7 +1,7 @@
-import { HomeIcon, VercelLogoIcon, HeartIcon} from '@radix-ui/react-icons'
+import { HomeIcon, VercelLogoIcon, HeartIcon } from '@radix-ui/react-icons'
 import SidebarItem from './SidebarItem'
 
-interface ISidebarItem{
+interface ISidebarItem {
   name: string;
   icon: any;
   path: string;
@@ -15,12 +15,12 @@ const items: ISidebarItem[] = [
   },
   {
     name: "Synonyms",
-    icon: VercelLogoIcon ,
+    icon: VercelLogoIcon,
     path: "/synonyms"
   },
   {
     name: "Curations",
-    icon: HeartIcon ,
+    icon: HeartIcon,
     path: "/curations"
   }
 ];
@@ -28,13 +28,13 @@ const items: ISidebarItem[] = [
 const Sidebar = () => {
   return (
 
-    <div className="fixed top-0 left-0 z-10 w-60 h-screen p-4 bg-white shadow-lg rounded-r-xl">
+    <div className="fixed top-20 left-4 z-10 w-60 h-screen p-6 bg-white shadow-lg rounded-3xl">
       <div className="flex flex-col space-y-14">
-        <img className="h-10 pt-3" src="/wuerth-logo-1.svg" alt="Logo"/>
+
 
         <div className='flex flex-col space-y-1'>
-        {items.map((item) => (
-          <SidebarItem key={item.path} item={item}/>
+          {items.map((item) => (
+            <SidebarItem key={item.path} item={item} />
           ))}
 
         </div>
