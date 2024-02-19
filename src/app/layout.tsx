@@ -1,11 +1,12 @@
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import '@radix-ui/themes/styles.css';
-import { Theme } from '@radix-ui/themes';
-import Sidebar from "./components/sidebar/Sidebar";
-import Header from "./components/header/header";
 import { Toaster } from "sonner";
+import Header from "./components/header/header";
+import Sidebar from "./components/sidebar/Sidebar";
+import "./globals.css";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,23 +16,25 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme>
-          <div className="flex min-h-screen w-screen bg-gray-50 ">
-            <Sidebar />
-            <Header />
-            <div className="flex flex-col bg-none w-full min-h-screen ml-[272px] m-4 mt-20 ">
-              {children}
+        <Providers>
+          <Theme>
+            <div className="flex min-h-screen w-screen bg-gray-50 ">
+              <Sidebar />
+              <Header />
+              <div className="m-4 ml-[272px] mt-20 flex min-h-screen w-full flex-col bg-none ">
+                {children}
+              </div>
+              <Toaster />
             </div>
-            <Toaster />
-          </div>
-        </Theme>
+          </Theme>
+        </Providers>
       </body>
     </html>
   );

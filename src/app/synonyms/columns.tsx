@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { ColumnDef } from "@tanstack/react-table"
-import ClosableTag from "../components/synonyms/closable-tag"
-import { Button } from "@radix-ui/themes"
-import AddNewTag from "../components/synonyms/add-new-tag"
+import { Button } from "@radix-ui/themes";
+import { ColumnDef } from "@tanstack/react-table";
+import AddNewTag from "../components/synonyms/add-new-tag";
+import ClosableTag from "../components/synonyms/closable-tag";
 
 export type Synonyms = {
-  id: string
-  synonyms: string[]
-}
+  id: string;
+  synonyms: string[];
+};
 
 export const columns: ColumnDef<Synonyms>[] = [
   // {
@@ -19,15 +19,15 @@ export const columns: ColumnDef<Synonyms>[] = [
     accessorKey: "synonyms",
     header: "Synonyms",
     cell: ({ row }) => {
-      const items: string[] = row.getValue("synonyms")
+      const items: string[] = row.getValue("synonyms");
 
-      return <div className="flex">
-        <ClosableTag items={items} />
+      return (
+        <div className="flex">
+          <ClosableTag items={items} />
 
-        <AddNewTag />
-
-      </div>
+          <AddNewTag />
+        </div>
+      );
     },
-  }
-
-]
+  },
+];

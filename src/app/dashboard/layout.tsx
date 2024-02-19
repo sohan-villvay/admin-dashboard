@@ -1,16 +1,14 @@
 const Layout = ({
-    children
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) => {
-    return(
-        <div>
-            <div>
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
+  return (
+    <div>
+      <div></div>
+      {children}
+    </div>
+  );
+};
 
-            </div>
-            {children}
-        </div>
-    )
-}
-
-export default Layout
+export default Layout;

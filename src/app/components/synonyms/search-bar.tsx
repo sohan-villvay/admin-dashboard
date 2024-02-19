@@ -1,11 +1,11 @@
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input";
 
 export default function SearchBar() {
   return (
     <div className="relative w-80">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-0 bottom-0 w-6 h-6 my-auto text-gray-500 left-3"
+        className="absolute bottom-0 left-3 top-0 my-auto h-6 w-6 text-gray-500"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -19,5 +19,5 @@ export default function SearchBar() {
       </svg>
       <Input type="text" placeholder="Search" className="pl-12 pr-4" />
     </div>
-  )
+  );
 }
