@@ -1,9 +1,8 @@
 "use client";
 
-import { Button } from "@radix-ui/themes";
 import { ColumnDef } from "@tanstack/react-table";
-import AddNewTag from "../components/synonyms/add-new-tag";
-import ClosableTag from "../components/synonyms/closable-tag";
+import AddNewTag from "../components/table/add-new-tag";
+import ClosableTag from "../components/table/closable-tag";
 
 export type Synonyms = {
   id: string;

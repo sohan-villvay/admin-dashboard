@@ -1,8 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { getData, postData } from "@/lib/actions";
-import { revalidatePath } from "next/cache";
 import { toast } from "sonner";
-import { DataTable } from "../components/synonyms/data-table";
+import { DataTable } from "../components/table/data-table";
 import { Synonyms, columns } from "./columns";
 
 export async function makePostRequest() {
@@ -10,8 +9,8 @@ export async function makePostRequest() {
 
   try {
     const data = {
-      synonyms: ["sdf", "sfgffgdg", "dfdf"],
-      id: "Test2",
+      synonyms: ["syn1", "syn2", "syn3"],
+      id: "TestSet",
     };
 
     const response = await postData(data);

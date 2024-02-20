@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { Synonym } from "./types";
 
 export async function getData() {
   const response = await fetch(
@@ -18,7 +19,7 @@ export async function getData() {
   return data;
 }
 
-export async function postData(data: any) {
+export async function postData(data: Synonym) {
   const response = await fetch(
     "https://65cda6eec715428e8b3ebc7d.mockapi.io/api/v1/synonyms",
     {
