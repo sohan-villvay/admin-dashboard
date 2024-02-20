@@ -25,10 +25,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Theme>
-            <div className="flex min-h-screen w-screen bg-gray-50 ">
+            <div className="flex min-h-screen w-screen bg-gray-50">
               <Sidebar />
               <Header />
-              <div className="m-4 ml-[272px] mt-20 flex min-h-screen w-full flex-col bg-none ">
+              <div className="m-4 ml-[272px] mt-20 flex min-h-screen w-full flex-col bg-none">
                 {children}
               </div>
               <Toaster />

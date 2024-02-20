@@ -4,7 +4,7 @@ import { CheckIcon } from "@radix-ui/react-icons";
 
 export function AddNewTag() {
   return (
-    <div className="group m-2 flex flex-row">
+    <div className="group invisible m-2 flex flex-row group-hover/row:visible">
       <Input
         placeholder="+"
         className="group h-7 w-7 rounded-full p-2 transition-all duration-300

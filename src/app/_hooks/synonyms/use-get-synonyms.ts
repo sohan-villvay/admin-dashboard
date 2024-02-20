@@ -1,11 +1,18 @@
-"use client";
-
-import { getData } from "@/lib/actions";
+import { Synonym } from "@/lib/types";
 import { useQuery } from "@tanstack/react-query";
 
-export default async function useGetSynonyms() {
-  return useQuery({
+export default function useGetSynonyms() {
+  const synonymQuery = useQuery<Synonym[]>({
     queryKey: ["synonyms"],
-    queryFn: getData,
+    queryFn: () =>
+      fetch("https://65cda6eec715428e8b3ebc7d.mockapi.io/api/v1/synonyms").then(
+        (response) => {
+          if (!response.ok) {
+            throw new Error("Failed to fetch synonyms");
+          }
+          return response.json();
+        },
+      ),
   });
+  return synonymQuery;
 }

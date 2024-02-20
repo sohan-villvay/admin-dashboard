@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import React from "react";
+import React, { useState } from "react";
 
 import {
   ColumnDef,
@@ -14,7 +14,6 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-import { makePostRequest } from "@/app/synonyms/page";
 import {
   Table,
   TableBody,
@@ -23,20 +22,32 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Synonym } from "@/lib/types";
 import { DataTablePagination } from "./pagination";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
-  data: TData[];
+  Querydata: Synonym[];
 }
 
 export function DataTable<TData, TValue>({
   columns,
-  data,
-}: DataTableProps<TData, TValue>) {
+  Querydata,
+}: DataTableProps<Synonym, TValue>) {
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
   );
+
+  const addSynonym = () => {
+    const newData: Synonym = {
+      id: "NewSet",
+      synonyms: [],
+    };
+
+    setData((prevData) => [...prevData, newData]);
+  };
+
+  const [data, setData] = useState(() => [...Querydata]);
 
   const table = useReactTable({
     data,
@@ -81,7 +92,7 @@ export function DataTable<TData, TValue>({
           />
         </div>
         <div className="right-0">
-          <Button onClick={makePostRequest}>+ New Set</Button>
+          <Button onClick={addSynonym}>+ New Set</Button>
         </div>
       </div>
       <div className="rounded-md ">
@@ -109,6 +120,7 @@ export function DataTable<TData, TValue>({
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
+                  className="group/row"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

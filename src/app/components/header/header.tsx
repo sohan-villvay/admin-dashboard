@@ -1,13 +1,14 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ModeToggle } from "../theme/mode-toggle";
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+// import { ModeToggle } from "../theme/mode-toggle";
 
 const Header = () => {
   return (
@@ -23,25 +24,37 @@ const Header = () => {
 
         <h4 className="text-l font-medium">Welcome, Sohan</h4>
 
-        <div className="mr-2 mt-1">
-          <DropdownMenu>
-            <DropdownMenuTrigger>
+        <Sheet>
+          <SheetTrigger>
+            <div className=" mr-2 mt-1">
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>SD</AvatarFallback>
               </Avatar>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+            </div>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle className="flex flex-col items-center justify-center">
+                <div>
+                  <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>SD</AvatarFallback>
+                  </Avatar>
+                </div>
+                Sohan De Silva
+              </SheetTitle>
+              <SheetDescription>
+                <Separator />
+                <div className="my-10">
+                  <div>Settings</div>
+                  <div>Profile</div>
+                  <div>Logout</div>
+                </div>
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
       </div>
     </div>
   );
